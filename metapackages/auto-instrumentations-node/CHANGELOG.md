@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.53.1](https://github.com/open-telemetry/opentelemetry-js-contrib/compare/auto-instrumentations-node-v0.53.0...auto-instrumentations-node-v0.53.1) (2024-12-04)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @opentelemetry/instrumentation-mysql2 bumped from ^0.43.0 to ^0.43.1
+
 ## [0.53.0](https://github.com/open-telemetry/opentelemetry-js-contrib/compare/auto-instrumentations-node-v0.52.1...auto-instrumentations-node-v0.53.0) (2024-11-18)
 
 
