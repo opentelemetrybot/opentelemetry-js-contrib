@@ -11,7 +11,6 @@ on:
       npm-workspace-args:
         required: true
         type: string
-
 permissions:
   contents: read
 jobs:

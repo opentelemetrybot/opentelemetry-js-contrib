@@ -7,7 +7,6 @@ on:
       - reopened
       - labeled
       - unlabeled
-
 permissions:
   contents: read
 jobs:
