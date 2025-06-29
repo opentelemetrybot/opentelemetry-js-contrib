@@ -5,7 +5,6 @@ on:
 
 permissions:
   contents: read
-
 jobs:
   stale:
     permissions:

@@ -10,7 +10,6 @@ on:
 
 permissions:
   contents: read
-
 jobs:
   parse-labels:
     runs-on: ubuntu-latest
