@@ -3,12 +3,17 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 name: Run Release Please
 jobs:
   release-please:
-    runs-on: ubuntu-latest
     permissions:
+      contents: write
+      pull-requests: write
       id-token: write
+    runs-on: ubuntu-latest
     steps:
       # The logic below handles the npm publication:
       - name: Checkout Repository
