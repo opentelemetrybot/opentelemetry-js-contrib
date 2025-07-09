@@ -5,8 +5,8 @@ components:
   detectors/node/opentelemetry-resource-detector-aws:
     - jj22ee
   detectors/node/opentelemetry-resource-detector-azure:
-    - jacksonweber
     - hectorhdzg
+    - jacksonweber
   detectors/node/opentelemetry-resource-detector-container:
     - abhee11
   detectors/node/opentelemetry-resource-detector-gcp:
@@ -22,36 +22,36 @@ components:
   metapackages/auto-configuration-propagators:
     - pichlermarc
   metapackages/auto-instrumentations-node:
-    - dyladan
-    - pichlermarc
-    - legendecas
     - blumamir
+    - dyladan
+    - legendecas
+    - pichlermarc
   metapackages/auto-instrumentations-web:
-    - dyladan
-    - pichlermarc
-    - legendecas
     - blumamir
+    - dyladan
+    - legendecas
+    - pichlermarc
   packages/baggage-log-record-processor:
     - maryliag
   packages/baggage-span-processor:
-    - mikegoldsmith
     - jamiedanielson
+    - mikegoldsmith
   packages/opentelemetry-host-metrics:
     - legendecas
   packages/opentelemetry-id-generator-aws-xray:
     - jj22ee
   packages/opentelemetry-propagation-utils:
-    - dyladan
-    - pichlermarc
-    - legendecas
     - blumamir
+    - dyladan
+    - legendecas
+    - pichlermarc
   packages/opentelemetry-redis-common: []
     # Unmaintained
   packages/opentelemetry-test-utils:
-    - dyladan
-    - pichlermarc
-    - legendecas
     - blumamir
+    - dyladan
+    - legendecas
+    - pichlermarc
   packages/winston-transport:
     - hectorhdzg
   plugins/node/instrumentation-amqplib:
@@ -73,10 +73,10 @@ components:
   plugins/node/instrumentation-tedious: []
     # Unmaintained
   plugins/node/instrumentation-typeorm:
-    - seemk
-    - weyert
-    - t2t2
     - mhennoch
+    - seemk
+    - t2t2
+    - weyert
   plugins/node/opentelemetry-instrumentation-aws-lambda:
     - jj22ee
   plugins/node/opentelemetry-instrumentation-aws-sdk:
@@ -124,8 +124,8 @@ components:
   plugins/node/opentelemetry-instrumentation-net:
     - seemk
   plugins/node/opentelemetry-instrumentation-oracledb:
-    - sudarshan12s
     - sharadraju
+    - sudarshan12s
   plugins/node/instrumentation-runtime-node:
     - d4nyll
   plugins/node/opentelemetry-instrumentation-pg:
@@ -146,8 +146,8 @@ components:
   plugins/node/opentelemetry-instrumentation-winston:
     - seemk
   plugins/web/opentelemetry-instrumentation-document-load:
-    - pkanal
     - martinkuba
+    - pkanal
   plugins/web/opentelemetry-instrumentation-long-task:
     - mhennoch
     - t2t2
