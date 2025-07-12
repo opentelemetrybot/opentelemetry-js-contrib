@@ -7,10 +7,15 @@ on:
       - edited
       - synchronize
 
+permissions:
+  contents: read
+
 jobs:
   main:
     name: Validate PR title
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write # required for commenting on PRs about title validation
     steps:
       - uses: amannn/action-semantic-pull-request@v5
         env:

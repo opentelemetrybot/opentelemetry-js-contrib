@@ -3,11 +3,16 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 name: Run Release Please
 jobs:
   release-please:
     runs-on: ubuntu-latest
     permissions:
+      contents: write # required for release-please to create releases and update files
+      pull-requests: write # required for release-please to create and update PRs
       id-token: write
     steps:
       # The logic below handles the npm publication:
