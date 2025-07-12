@@ -3,9 +3,15 @@ on:
   schedule:
     - cron: '30 6 * * *'
 
+permissions:
+  contents: read
+
 jobs:
   stale:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write # required for closing issues and adding labels/comments
+      pull-requests: write # required for closing PRs and adding labels/comments
     steps:
       - uses: actions/stale@v9
         with:

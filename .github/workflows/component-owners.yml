@@ -2,10 +2,15 @@ name: 'Component Owners'
 on:
   pull_request_target:
 
+permissions:
+  contents: read
+
 jobs:
   run_self:
     runs-on: ubuntu-latest
     name: Auto Assign Owners
+    permissions:
+      pull-requests: write # required for assigning reviewers and adding labels
     steps:
       - uses: dyladan/component-owners@main
         with:
