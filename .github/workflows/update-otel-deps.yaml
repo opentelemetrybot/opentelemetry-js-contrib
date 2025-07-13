@@ -7,16 +7,21 @@ jobs:
   create-or-update-deps-pr:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
+        id: otelbot-token
+        with:
+          app-id: ${{ vars.OTELBOT_APP_ID }}
+          private-key: ${{ secrets.OTELBOT_PRIVATE_KEY }}
       - name: Fork
         run: gh repo fork open-telemetry/opentelemetry-js-contrib
         env:
-          GITHUB_TOKEN: ${{ secrets.OPENTELEMETRYBOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.otelbot-token.outputs.token }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: opentelemetrybot/opentelemetry-js-contrib
+          repository: otelbot/opentelemetry-js-contrib
           ref: main
-          token: ${{ secrets.OPENTELEMETRYBOT_GITHUB_TOKEN }}
+          token: ${{ steps.otelbot-token.outputs.token }}
       - name: Sync with upstream
         run: |
           git remote show origin
@@ -37,12 +42,12 @@ jobs:
 
       - name: Create/Update Release PR
         run: |
-          git config user.name opentelemetrybot
-          git config user.email 107717825+opentelemetrybot@users.noreply.github.com
+          git config user.name otelbot
+          git config user.email 197425009+otelbot@users.noreply.github.com
           git checkout -b feat/update-otel-deps
           node ./scripts/update-otel-deps.js
           git commit -am "feat(deps): update deps matching '@opentelemetry/*'"
           git push --set-upstream origin feat/update-otel-deps --force
           gh pr create --repo open-telemetry/opentelemetry-js-contrib --title "feat(deps): update deps matching '@opentelemetry/*'" --body 'Updates all `@opentelemetry/*` dependencies to latest'
         env:
-          GITHUB_TOKEN: ${{ secrets.OPENTELEMETRYBOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.otelbot-token.outputs.token }}
